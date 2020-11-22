@@ -1,0 +1,11 @@
+.teams {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.team-icon {
+    border: 1px solid $color-black;
+    margin-right: 5rem;
+    width: $icon-width;
+}

@@ -1,0 +1,15 @@
+.contests {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.contest-icon {
+    border: 1px solid $color-black;
+    width: $icon-width;
+    margin-right: 5rem;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+    }
+}

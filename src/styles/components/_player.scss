@@ -1,0 +1,16 @@
+.players-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.players-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.player-icon {
+    border: 1px solid $color-black;
+    width: $icon-width;
+}

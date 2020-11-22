@@ -1,0 +1,21 @@
+
+.matches-list {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.match-icon {
+    border: 1px solid $color-black;
+    width: $icon-width;
+    margin-right: 5rem;
+     &__match {
+         display: flex;
+         justify-content: space-between;
+     }
+}
+
+.match-link {
+    text-decoration: none;
+    color: $color-black;
+}
