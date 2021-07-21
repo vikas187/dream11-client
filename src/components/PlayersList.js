@@ -24,11 +24,11 @@ class PlayerList extends React.Component {
     }
 
     async componentDidMount() {
-        const match = await axios.get("http://127.0.0.1:8080/matches/" + this.state.match_id);
+        const match = await axios.get("https://fantasy-league-server.herokuapp.com/matches/" + this.state.match_id);
         if(match.status===200) {
             const team1 = match.data[0].team1;
             const team2 = match.data[0].team2;
-            const response = await axios.get(`http://127.0.0.1:8080/players/${team1}/${team2}`);
+            const response = await axios.get(`https://fantasy-league-server.herokuapp.com/players/${team1}/${team2}`);
             if(response.status===200) {
                 const allPlayers = response.data;
                 this.setState({allPlayers})

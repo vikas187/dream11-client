@@ -12,7 +12,7 @@ class Home extends React.Component {
     }
 
     async componentDidMount() {
-        const response = await axios.get("http://127.0.0.1:8080/matches/");
+        const response = await axios.get("https://fantasy-league-server.herokuapp.com/matches/");
         if(response.status===200) {
             this.setState({Matches: response.data});
         }

@@ -19,7 +19,7 @@ class ContestList extends React.Component {
     }
 
     async componentDidMount() {
-        const response = await axios.get('http://127.0.0.1:8080/contests');
+        const response = await axios.get('https://fantasy-league-server.herokuapp.com/contests');
         if(response.status===200) {
             const contests = response.data;
             this.setState({contests})

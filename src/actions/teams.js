@@ -45,7 +45,7 @@ export const removeContest = (team_id, contest_id) => {
 }
 
 export async function fetchTeams(dispatch) {
-    const response = await axios.get("http://127.0.0.1:8080/teams");
+    const response = await axios.get("https://fantasy-league-server.herokuapp.com/teams");
     if(response.status==200) {
         dispatch({ type: 'GET_TEAMS', payload: response.data })
     } 
@@ -53,7 +53,7 @@ export async function fetchTeams(dispatch) {
 
 export const startAddTeam = (players, match_id, contests) => {
     return async(dispatch) => {
-        const response = await axios.post("http://127.0.0.1:8080/teams", {
+        const response = await axios.post("https://fantasy-league-server.herokuapp.com/teams", {
             data: {
                 players,
                 match_id,
@@ -74,7 +74,7 @@ export const startAddTeam = (players, match_id, contests) => {
 
 export const startEditTeam = (team_id, contest_id) => {
     return async(dispatch) => {
-        const response = await axios.patch(`http://127.0.0.1:8080/teams/${team_id}`, {
+        const response = await axios.patch(`https://fantasy-league-server.herokuapp.com/teams/${team_id}`, {
             contest_id
         });
         if(response.status===201) {
@@ -89,7 +89,7 @@ export const startEditTeam = (team_id, contest_id) => {
 
 export const startRemoveContest = (team_id, contest_id) => {
     return async(dispatch) => {
-        const response = await axios.patch(`http://127.0.0.1:8080/teams-remove/${team_id}`, {
+        const response = await axios.patch(`https://fantasy-league-server.herokuapp.com/teams-remove/${team_id}`, {
             contest_id
         });
         if(response.status===201) {
@@ -104,7 +104,7 @@ export const startRemoveContest = (team_id, contest_id) => {
 
 export const startEditPlayers = (team_id, players) => {
     return async(dispatch) => {
-        const response = await axios.patch(`http://127.0.0.1:8080/teams-players/${team_id}`, {
+        const response = await axios.patch(`https://fantasy-league-server.herokuapp.com/teams-players/${team_id}`, {
             players
         });
         if(response.status===201) {

@@ -26,7 +26,7 @@ class MyMatches extends React.Component {
         }
     }
     async componentDidMount() {
-        const response = await axios.get("http://127.0.0.1:8080/matches/");
+        const response = await axios.get("https://fantasy-league-server.herokuapp.com/matches/");
         if(response.status===200) {
             const myMatches = response.data.filter((match)=> {
                 if(_.find(this.props.teams, {"match_id": match._id})) {
