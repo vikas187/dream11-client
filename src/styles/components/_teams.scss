@@ -1,11 +1,20 @@
 .teams {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: start;
+    margin: 5rem 0;
+    max-width: 40%;
+    box-sizing: border-box;
+    padding: $m-size;
 }
 
 .team-icon {
-    border: 1px solid $color-black;
-    margin-right: 5rem;
-    width: $icon-width;
+    border-radius: $m-radius;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, .3);
+    margin: 0 auto;
+    box-sizing: border-box;
+    margin-bottom: $m-size;
+    padding: $s-size;
+}
+
+.team-links {
+    display: flex;
+    justify-content: space-between;
 }

@@ -1,1 +1,39 @@
-$color-black: black;
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: $m-size;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+.bgImage {
+    background-image:  url(../../img/Virat-4.jpg);
+    background-size: cover;
+    position: fixed;
+    left: 40%;
+    top:0;
+    bottom:0;
+    right: 0;
+    
+}
+
+.textGray {
+    color: $color-gray;
+}
+
+.error-message {
+    color: $color-error;
+    margin-left: $m-size;
+}
+.success-message {
+    color: $color-blue;
+    margin-left: $m-size;
+}
+
+.link {
+    margin-left: $m-size;
+    text-decoration: none;
+}

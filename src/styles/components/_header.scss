@@ -1,0 +1,21 @@
+.header {
+    max-width: 40%;
+    background-color: $primary-color;
+    text-align: center;
+    top:0;
+    left:0;
+    right:0;
+    position:fixed;
+    margin-top: 0;
+    padding: $s-size 0;
+    color: $color-white;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+    &__title {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.header-link {
+    text-decoration: none;
+}

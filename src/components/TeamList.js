@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {Fragment, useState} from 'react';
+import Header from "./Header";
 import { connect } from 'react-redux';
 import TeamItem from './TeamItem';
 import {startEditTeam} from '../actions/teams';
@@ -31,7 +32,9 @@ const TeamList = (props) => {
         return team.match_id === props.match.params.match_id;
     });
     return (
-        <div>
+        <Fragment>
+        <Header/>
+        <div className="teams">
         <Link to={`/select-players/${props.match.params.match_id}/${props.match.params.contest_id}`}>Create Team</Link>
         {teams.map((team, index)=>{
             return <div key={index}>
@@ -48,6 +51,7 @@ const TeamList = (props) => {
         }
         
         </div>
+        </Fragment>
     )
 }
 

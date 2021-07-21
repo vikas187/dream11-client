@@ -1,18 +1,32 @@
-
-.matches-list {
-    display: flex;
-    justify-content: start;
-    flex-wrap: wrap;
+.matches {
+    margin: 5rem 0;
+    max-width: 40%;
+    box-sizing: border-box;
+    padding: $m-size;
+    &-title {
+        font-weight: 900;
+    } 
+    
 }
 
+
+
 .match-icon {
-    border: 1px solid $color-black;
-    width: $icon-width;
-    margin-right: 5rem;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
+    border-radius: $m-radius;
+    box-sizing: border-box;
+    padding: $s-size;
+    margin: 0 auto;
+    margin-bottom: $m-size;
      &__match {
          display: flex;
          justify-content: space-between;
      }
+}
+
+.match-heading {
+    color: $color-gray;
+    font-size: $s-size;
 }
 
 .match-link {

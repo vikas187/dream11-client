@@ -8,18 +8,26 @@ const ContestItem  = (props) => {
     });
     return (
         <div className="contest-icon">
-            <div className="contest-icon__header">
-            <h2>{props.price}</h2>
-            <h2>{props.entry}</h2>
+            <div className="contest-details">
+                <div className="contest-headers">
+                    <p className="textGray">Prize Pool</p>
+                    <p className="textGray">Entry</p>
+                </div>
+                <div className="contest-icon__header">
+                    <h2 className="contest-price">&#8377; {props.price}</h2>
+
+                    {!props.joined?
+                        (teams.length>0 ? 
+                        <Link className="joinButton" to={`../teamlist/${props.match_id}/${props._id}`}>&#8377; {props.entry}</Link>:
+                        <Link className= "joinButton" to={`../select-players/${props.match_id}/${props._id}`}>&#8377; {props.entry}</Link>):
+                        (<p>Joined</p>)
+                    }
+                
+                </div>
             </div>
-            <p>{props.spots} spots</p>
-            {!props.joined?
-                (teams.length>0 ? 
-                <Link to={`../teamlist/${props.match_id}/${props._id}`}>Join</Link>:
-                <Link to={`../select-players/${props.match_id}/${props._id}`}>Join</Link>):
-                (<p>Joined</p>)
             
-            }
+            <p className="textGray">{props.spots} spots</p>
+            
         </div>
     )
 }

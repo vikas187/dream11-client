@@ -1,6 +1,8 @@
 .players-div {
-    display: flex;
-    justify-content: space-between;
+    margin: 18rem 0;
+    max-width: 40%;
+    box-sizing: border-box;
+    padding: $m-size;
 }
 
 .players-list {
@@ -10,7 +12,122 @@
     flex-direction: column;
 }
 
+
 .player-icon {
-    border: 1px solid $color-black;
-    width: $icon-width;
+    border-top: 1px solid $color-border-gray;
+    width: 100%;
+    display: flex;
+    padding: $m-size;
+    box-sizing: border-box;
+    justify-content: space-between;
+    &:last-child {
+        border-bottom: 1px solid $color-border-gray;
+    }
+
+    &.selected {
+        background-color: $color-light-yellow;
+    }
+
+    &.disabled {
+        pointer-events:none;
+        opacity: 60%;
+    }
+}
+
+
+
+.players-header {
+    background-color:  $primary-color;
+    color: white;
+    padding: $m-size $m-size;
+}
+
+.players-headers-combined {
+    box-sizing: border-box;
+    max-width: 40%;
+    position: fixed;
+    top: 0;
+    left:0;
+    right: 0;
+     
+}
+
+.players-team-title {
+    display: inline-block;
+}
+
+.players-header__icons {
+    cursor: pointer;
+}
+
+.players-header-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.players-list-header {
+    display: flex;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3); 
+    padding: 0;
+    color: $color-black;
+    font-weight: 900;
+    justify-content: space-evenly;
+    background-color: $color-light-gray;
+}
+
+.player-title {
+    margin: 0;
+}
+
+.players-list-tabs {
+    flex:1;
+    text-align: center;
+    padding: $m-size;
+
+    &:hover {
+        color: $color-white;
+        background-color: $color-gray;
+    }
+    cursor: pointer;
+}
+
+.active {
+    color: $color-white;
+    background-color: $color-gray;
+}
+
+.players-selected {
+    background: url("../../img/pitch1.jpg");
+    width: 60%;
+    color: $color-white;
+    font-weight: 800;
+    padding-left: $m-size;
+    height: 100%;
+    background-size: cover;
+    position:fixed;
+    z-index:1;
+    left: 40%;
+    top: 0;
+    right: $l-size;
+}
+
+.players-footer {
+    position: fixed;
+    bottom: $m-size;
+    width: 100%;
+}
+
+.players-save-button {
+    border:0;
+    color: $color-white;
+    background-color: $color-green;
+    padding: $m-size;
+    border-radius: $s-size;
+    cursor: pointer;
+
+    &:disabled {
+        background-color: $color-light-gray;
+        color: $color-gray;
+        cursor: inherit;
+    }
 }

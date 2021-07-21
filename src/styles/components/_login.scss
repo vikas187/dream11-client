@@ -1,0 +1,37 @@
+.login-form {
+    margin-top: 15rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    box-shadow: 0px 0px 2px 1px rgba(0,0,0, 0.2);
+    max-width: 38%;
+    box-sizing: border-box;
+    padding: $m-size;
+}
+
+.form-input {
+    font-size: $m-size;
+    margin-bottom: $l-size;
+    width: 100%;
+    border: none;
+    padding: $m-size;
+    border-bottom: 3px solid $color-black;
+    display: block;
+    box-sizing: border-box;
+
+
+    &:focus {
+        border: none;
+        border-bottom: 3px solid $color-blue;
+    }
+}
+
+.form-submit {
+    text-decoration: none;
+    width: 100%;
+    border: 0;
+    cursor: pointer;
+    color: $color-white;
+    border-radius: $m-radius;
+    padding: 1rem 3rem;
+    background-color: $color-green;
+}

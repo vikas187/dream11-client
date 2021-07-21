@@ -5,7 +5,7 @@ class Match extends React.Component {
     render() {
         return (
             <Link to={`/contests/${this.props._id}`} className="match-link"><div className="match-icon">
-            <p>{this.props.tournament}</p>
+            <p className="match-heading">{this.props.tournament}</p>
             <div className="match-icon__match">
             <h4>{this.props.team1}</h4>
             <p>vs</p>

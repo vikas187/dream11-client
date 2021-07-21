@@ -1,12 +1,12 @@
 //import {v4 as uuidv4} from 'uuid';
 import axios from "axios";
 
-export const addTeam = (id, players, match_id, contests) => {
+export const addTeam = (_id, players, match_id, contests) => {
     return {
         type: 'ADD_TEAM',
         
         team: {
-            id,
+            _id,
             players,
             match_id,
             contests

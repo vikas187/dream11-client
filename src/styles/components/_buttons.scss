@@ -1,0 +1,35 @@
+.joinButton {
+    text-decoration: none;
+    color: $color-white;
+    border-radius: $m-radius;
+    padding: 1rem 3rem;
+    background-color: $color-green;
+}
+
+.joinedBackground {
+    background-color: $color-blue;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
+    // border: 1px solid white;
+    text-decoration: none;
+    text-align: center;
+    border: 0;
+    color: white;
+    padding: $s-size 0;
+    border-radius: $m-radius;
+    cursor: pointer;
+    width: 49%;
+}
+
+.add-button {
+    border-left: 1px solid $color-border-gray;
+    width: 4rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.remove-button {
+    border-left: 1px solid $color-border-gray;
+    width: 4rem;
+    text-align: center;
+    cursor: pointer;
+}
