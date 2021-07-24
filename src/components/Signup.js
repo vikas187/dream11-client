@@ -8,7 +8,7 @@ const Signup = (props) => {
     async function signupUser(event) {
         try {
             event.preventDefault();
-            const response = await axios.post("http://localhost:8080/users", {
+            const response = await axios.post("https://fantasy-league-server.herokuapp.com/users", {
                 "email": event.target.email.value,
                 "password": event.target.password.value
             });
