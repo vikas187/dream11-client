@@ -18,13 +18,13 @@ const Profile = (props) => {
     useEffect(()=>{
 
         (async()=>{ //remember to always call async/await as an IIFE inside Useffect else it wont work.
-            const response = await axiosAuth("http://127.0.0.1:8080/users/me");
+            const response = await axiosAuth("https://fantasy-league-server.herokuapp.com/users/me");
             console.log(response);
             if(response.error) {
                 console.log(response.error);
             } else {
                 changeDetails({...response.data});
-                const imageResponse = await axiosAuth("http://127.0.0.1:8080/users/me/avatar");
+                const imageResponse = await axiosAuth("https://fantasy-league-server.herokuapp.com/me/avatar");
                 if(imageResponse.error) {
                     console.log(imageResponse.error);
                 } else {
@@ -47,7 +47,7 @@ const Profile = (props) => {
                 console.log(token);
                 var config = {
                     method: 'patch',
-                    url: 'http://127.0.0.1:8080/users/me',
+                    url: 'https://fantasy-league-server.herokuapp.com/users/me',
                     headers: { 
                       'Authorization': `Bearer ${token}`
                     },
@@ -65,7 +65,7 @@ const Profile = (props) => {
                     if(image) {
                         config = {
                             method: 'post',
-                            url: 'http://127.0.0.1:8080/users/me/avatar',
+                            url: 'https://fantasy-league-server.herokuapp.com/users/me/avatar',
                             headers: { 
                               'Authorization': `Bearer ${token}`,
                               "Content-Type": "multipart/form-data"
