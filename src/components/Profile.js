@@ -5,6 +5,7 @@ import Header from './Header';
 import sample from '../img/cropped.jpg';
 import axios from "axios";
 import {axiosAuth} from '../utils/utils';
+import { set } from 'lodash';
 
 const Profile = (props) => {
     const [error, changeError] = useState("");
@@ -17,17 +18,17 @@ const Profile = (props) => {
     useEffect(()=>{
 
         (async()=>{ //remember to always call async/await as an IIFE inside Useffect else it wont work.
-            const response = await axiosAuth("https://fantasy-league-server.herokuapp.com/users/me");
+            const response = await axiosAuth("http://127.0.0.1:8080/users/me");
             console.log(response);
             if(response.error) {
                 console.log(response.error);
             } else {
                 changeDetails({...response.data});
-                const imageResponse = await axiosAuth("https://fantasy-league-server.herokuapp.com/users/me/avatar");
+                const imageResponse = await axiosAuth("http://127.0.0.1:8080/users/me/avatar");
                 if(imageResponse.error) {
                     console.log(imageResponse.error);
                 } else {
-                    setCurrImage("data:image/jpeg;base64,"+imageResponse.data);
+                    setCurrImage("data:image/jpeg;base64," + imageResponse.data);
                 }
             }
         })();
@@ -46,7 +47,7 @@ const Profile = (props) => {
                 console.log(token);
                 var config = {
                     method: 'patch',
-                    url: 'https://fantasy-league-server.herokuapp.com/users/me',
+                    url: 'http://127.0.0.1:8080/users/me',
                     headers: { 
                       'Authorization': `Bearer ${token}`
                     },
@@ -64,7 +65,7 @@ const Profile = (props) => {
                     if(image) {
                         config = {
                             method: 'post',
-                            url: 'https://fantasy-league-server.herokuapp.com/users/me/avatar',
+                            url: 'http://127.0.0.1:8080/users/me/avatar',
                             headers: { 
                               'Authorization': `Bearer ${token}`,
                               "Content-Type": "multipart/form-data"
@@ -72,7 +73,6 @@ const Profile = (props) => {
                             data: formData
                           };
                         const imageResponse = await axios(config);
-                        console.log(imageResponse);
                     }
  
                     changeMessage("Profile has been updated successfully");
@@ -85,14 +85,19 @@ const Profile = (props) => {
     }
 
     const uploadPhoto = (event)=> {
-        setImage(event.target.files[0])
+        setImage(event.target.files[0]);
+        setCurrImage(URL.createObjectURL(event.target.files[0]));
+    }
+
+    const triggerImageUpload = (event)=> {
+        document.getElementById("image").click();
     }
     return <Fragment>
         <Header/>
         
             <form className="profile-form" onSubmit={updateDetails} encType="multipart/form-data">
-                <img  src={currImage} width="200" height="200" className="profile-image" />
-                <input type="file" accept="image/*" name="photo" onChange={uploadPhoto}/>
+                <img  src={currImage} width="200" height="200" className="profile-image" onClick={triggerImageUpload}/>
+                <input type="file" accept="image/*" id="image" name="photo" onChange={uploadPhoto} className="imageFile"/>
                 <input className="form-input" name="firstname" type="text" placeholder="Firstname" defaultValue={details.firstname}/>
                 <input className="form-input" name="lastname" type="text" placeholder="lastname" defaultValue={details.lastname}/>
                 <input className="form-input" name="email" type="text" disabled defaultValue={details.email}></input>
