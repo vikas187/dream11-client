@@ -24,7 +24,7 @@ const Profile = (props) => {
                 console.log(response.error);
             } else {
                 changeDetails({...response.data});
-                const imageResponse = await axiosAuth("https://fantasy-league-server.herokuapp.com/me/avatar");
+                const imageResponse = await axiosAuth("https://fantasy-league-server.herokuapp.com/users/me/avatar");
                 if(imageResponse.error) {
                     console.log(imageResponse.error);
                 } else {
